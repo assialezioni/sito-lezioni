@@ -35,6 +35,7 @@
     }
 
     /* NAV BAR */
+   /* NAV BAR */
     header {
       position: fixed;
       top: 0;
@@ -46,25 +47,38 @@
     }
 
     .nav-container {
-      max-width: 900px;
+      max-width: 850px;
       margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 12px 20px;
+    }
+
+    .nav-logo {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    /* Tasto 3 lineette (nascosto di base su PC) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 0 5px;
     }
 
     .nav-links {
       display: flex;
-      gap: 15px;
+      gap: 18px;
       list-style: none;
       margin: 0;
       padding: 0;
-      white-space: nowrap;        /* Mantiene i link su un'unica riga */
-      overflow-x: auto;          /* Permette lo scorrimento orizzontale su mobile */
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;     /* Nasconde la barra di scorrimento */
-    }
-
-    .nav-links::-webkit-scrollbar {
-      display: none;
     }
 
     .nav-links a {
@@ -77,7 +91,39 @@
 
     .nav-links a:hover {
       opacity: 0.8;
-    } 
+    }
+
+    /* STILI SPECIFICI PER MOBILE (Sotto i 640px) */
+    @media (max-width: 640px) {
+      .menu-toggle {
+        display: block; /* Mostra le 3 lineette su telefono */
+      }
+
+      .nav-links {
+        display: none; /* Nasconde il menu disteso */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-dark);
+        padding: 15px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        gap: 12px;
+      }
+
+      /* Quando si clicca sulle 3 lineette, il menu si apre */
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 1rem;
+        display: block;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
     
     /* NAV BAR */
     /*header {
@@ -505,10 +551,17 @@
 </head>
 <body>
 
-  <!-- BARRA DI NAVIGAZIONE IN ALTO -->
+  <!-- BARRA DI NAVIGAZIONE -->
  <header>
     <div class="nav-container">
-      <ul class="nav-links">
+      <a href="#" class="nav-logo">Assia Lezioni</a>
+      
+      <!-- Pulsante con le 3 lineette per Mobile -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="#chi-sono">Chi sono</a></li>
         <li><a href="#come-insegno">Come insegno</a></li>
         <li><a href="#servizi">Servizi</a></li>
@@ -839,5 +892,22 @@
 
   </div>
 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    // Apre/chiude il menu quando si clicca sulle 3 lineette
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Chiude il menu dopo aver cliccato su una voce
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
+
