@@ -48,6 +48,51 @@
     .nav-container {
       max-width: 900px;
       margin: 0 auto;
+      padding: 12px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;        /* Mantiene i link su un'unica riga */
+      overflow-x: auto;          /* Permette lo scorrimento orizzontale su mobile */
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;     /* Nasconde la barra di scorrimento */
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    } 
+    
+    /* NAV BAR */
+    /*header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--primary-dark);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 900px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -78,7 +123,7 @@
 
     .nav-links a:hover {
       opacity: 0.8;
-    }
+    } */
 
     /* CONTENITORE PRINCIPALE */
     .main-wrapper {
@@ -461,13 +506,12 @@
 <body>
 
   <!-- BARRA DI NAVIGAZIONE IN ALTO -->
-  <header>
+ <header>
     <div class="nav-container">
-      <a href="#" class="nav-logo">Assia Lezioni</a>
       <ul class="nav-links">
         <li><a href="#chi-sono">Chi sono</a></li>
         <li><a href="#come-insegno">Come insegno</a></li>
-        <li><a href="#Lezioni">Lezioni</a></li>
+        <li><a href="#servizi">Servizi</a></li>
         <li><a href="#modalita">Modalità</a></li>
         <li><a href="#recensioni">Recensioni</a></li>
         <li><a href="#contatti">Contatti</a></li>
