@@ -35,8 +35,107 @@
     }
 
     /* NAV BAR */
-   /* NAV BAR */
+
+    /* NAV BAR */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--primary-dark);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+
+    /* Pulsante Contattami nel banner mobile */
+    .nav-btn-mobile {
+      background-color: #ffffff;
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .nav-btn-mobile:hover {
+      background-color: var(--accent-gold, #f0f0f0);
+    }
+
+    .nav-links {
+      display: none; /* Di base nascosto, si apre con il pulsante ☰ */
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--primary-dark);
+      padding: 15px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      gap: 12px;
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      display: block;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Su Desktop/Schermi grandi ripristina la visualizzazione classica */
+    @media (min-width: 641px) {
+      .menu-toggle, .nav-btn-mobile {
+        display: none; /* Nasconde le 3 lineette e il bottone mobile su PC */
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        padding: 0;
+        box-shadow: none;
+        justify-content: center;
+        gap: 20px;
+        width: auto;
+      }
+
+      .nav-links a {
+        font-size: 0.9rem;
+        padding: 0;
+        border-bottom: none;
+      }
+    }
+
+   /* header {
       position: fixed;
       top: 0;
       left: 0;
@@ -62,7 +161,7 @@
       text-decoration: none;
     }
 
-    /* Tasto 3 lineette (nascosto di base su PC) */
+    
     .menu-toggle {
       display: none;
       background: none;
@@ -93,14 +192,14 @@
       opacity: 0.8;
     }
 
-    /* STILI SPECIFICI PER MOBILE (Sotto i 640px) */
+   
     @media (max-width: 640px) {
       .menu-toggle {
-        display: block; /* Mostra le 3 lineette su telefono */
+        display: block; 
       }
 
       .nav-links {
-        display: none; /* Nasconde il menu disteso */
+        display: none; 
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -112,7 +211,6 @@
         gap: 12px;
       }
 
-      /* Quando si clicca sulle 3 lineette, il menu si apre */
       .nav-links.active {
         display: flex;
       }
@@ -123,7 +221,7 @@
         padding: 6px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
-    }
+    } */
     
     /* NAV BAR */
     /*header {
@@ -552,14 +650,16 @@
 <body>
 
   <!-- BARRA DI NAVIGAZIONE -->
- <header>
+ <!-- BARRA DI NAVIGAZIONE -->
+  <header>
     <div class="nav-container">
-      <!--<a href="#" class="nav-logo">Assia Lezioni</a>-->
-      
-      <!-- Pulsante con le 3 lineette per Mobile -->
+      <!-- Menu 3 lineette a sinistra -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Apri menu">
         ☰
       </button>
+
+      <!-- Pulsante rapido Contattami a destra -->
+      <a href="#contatti" class="nav-btn-mobile">Contattami</a>
 
       <ul class="nav-links" id="nav-links">
         <li><a href="#chi-sono">Chi sono</a></li>
