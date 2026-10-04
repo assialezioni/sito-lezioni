@@ -3,200 +3,251 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assia | Lezioni Private & Tutorato di Matematica e Fisica</title>
+  <title>Lezioni private di Matematica e Fisica | Assia</title>
   <style>
     :root {
-      --primary: #1e40af;
-      --primary-hover: #1d4ed8;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #475569;
-      --border: #e2e8f0;
-      --accent-bg: #eff6ff;
+      --primary-dark: rgb(32, 56, 100);
+      --primary-blue: #2563eb;
+      --accent-light: #e0f2fe;
+      --bg-color: #f8fafc;
+      --text-main: #0f172a;
+      --text-muted: #334155;
     }
-    
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 20px 12px; }
-    
-    .container { max-width: 680px; margin: 0 auto; }
-    
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-    
-    /* Header & Profilo */
-    .profile-header { text-align: center; }
-    .profile-img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 3px solid var(--primary); }
-    h1 { font-size: 1.75rem; color: var(--text); margin-bottom: 4px; }
-    .tagline { color: var(--primary); font-weight: 600; font-size: 0.95rem; margin-bottom: 12px; }
-    .location-badge { display: inline-block; background: var(--accent-bg); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-bottom: 16px; }
-    
-    /* Buttons */
-    .btn { display: inline-block; width: 100%; padding: 14px 20px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; font-size: 1rem; transition: background 0.2s; }
-    .btn-email { background-color: var(--primary); color: white; margin-top: 8px; }
-    .btn-email:hover { background-color: var(--primary-hover); }
-    .btn-outline { background-color: transparent; border: 1px solid var(--primary); color: var(--primary); margin-top: 10px; }
-    
-    /* Typography & Lists */
-    h2 { font-size: 1.25rem; color: var(--primary); margin-bottom: 12px; border-bottom: 2px solid var(--accent-bg); padding-bottom: 6px; }
-    h3 { font-size: 1.05rem; color: var(--text); margin-top: 14px; margin-bottom: 6px; }
-    p { margin-bottom: 12px; color: var(--text-muted); font-size: 0.95rem; }
-    ul { list-style: none; margin-bottom: 12px; }
-    li { position: relative; padding-left: 20px; margin-bottom: 6px; color: var(--text-muted); font-size: 0.95rem; }
-    li::before { content: "•"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-    
-    /* Service Box Specifics */
-    .service-box { background: #fafafa; border-left: 4px solid var(--primary); padding: 14px; margin-bottom: 12px; border-radius: 0 8px 8px 0; }
-    
-    /* Price Badge */
-    .price-box { background: var(--accent-bg); padding: 12px; border-radius: 8px; margin-top: 10px; }
-    
-    /* Reviews */
-    .review { border-bottom: 1px dashed var(--border); padding-bottom: 10px; margin-bottom: 10px; }
-    .review:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .review-author { font-weight: 600; font-size: 0.85rem; color: var(--text); }
-    .stars { color: #f59e0b; font-size: 0.85rem; }
 
-    .footer { text-align: center; color: #94a3b8; font-size: 0.8rem; margin-top: 30px; margin-bottom: 20px; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding-top: 70px; /* Spazio per il menu fisso in alto */
+    }
+
+    /* NAV BAR / MENU A TENDINA-NAVIGAZIONE */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--primary-dark);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+
+    .nav-logo {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    }
+
+    /* CONTENITORE PRINCIPALE CONTINUO */
+    .main-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* HERO / TITOLO INIZIALE */
+    .hero-title {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent-light);
+    }
+
+    .hero-title h1 {
+      font-size: 2.3rem;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* SEZIONE CHI SONO (FOTO A FIANCO DEL TESTO) */
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: 640px) {
+      .about-container {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    .profile-img-large {
+      width: 180px;
+      height: 180px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(32, 56, 100, 0.15);
+      border: 3px solid var(--primary-dark);
+      flex-shrink: 0;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 640px) {
+      .profile-img-large {
+        margin: 0;
+      }
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--text-main);
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    /* SEZIONE COME INSEGNO */
+    .teaching-method {
+      background-color: var(--accent-light);
+      padding: 24px;
+      border-radius: 12px;
+      border-left: 5px solid var(--primary-dark);
+      margin-bottom: 40px;
+    }
+
+    /* PULSANTE CONTATTI */
+    .btn-email {
+      display: inline-block;
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+
+    .btn-email:hover {
+      background-color: #1e3a6a;
+    }
+
+    /* SEZIONI BOZZA (IN ATTESA DI MODIFICA) */
+    .section-block {
+      margin-bottom: 40px;
+      padding-top: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #cbd5e1;
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    
-    <!-- HEADER -->
-    <div class="card profile-header">
-      <!-- Sostituisci foto.jpg con la tua immagine nella stessa cartella -->
-      <img src="foto.jpg" alt="Assia - Tutor Matematica e Fisica" class="profile-img" onerror="this.src='https://via.placeholder.com/110?text=Assia'">
-      <h1>Ciao, sono Assia!</h1>
-      <div class="tagline">Ricercatrice & Laureata Magistrale in Fisica a La Sapienza (110/110 e Lode)</div>
-      <div class="location-badge">📍 Roma (Piazza Bologna / Trieste) & Online</div>
-      
-      <a href="mailto:assialezioni@gmail.com?subject=Richiesta%20Informazioni%20Lezioni" class="btn btn-email">
-        ✉️ Contattami via Email
-      </a>
-    </div>
-
-    <!-- CHI SONO & CV -->
-    <div class="card">
-      <h2>Chi Sono & Esperienza</h2>
-      <p>Sono una ricercatrice in Fisica con 4 anni di esperienza regolarmente matrata nell'insegnamento di lezioni private a liceali e universitari. Nel mio percorso ho capito che l'ansia e la paura di fronte a un problema matematico nascono quasi sempre da piccole lacune concettuali date per scontate: il mio scopo è chiarirle e costruire un rapporto di fiducia ed empatia.</p>
-      
-      <h3>Esperienze accademiche & Tutorato</h3>
-      <ul>
-        <li><strong>Ricercatrice in Fisica</strong> – Laureata Magistrale con 110/110 e Lode presso La Sapienza.</li>
-        <li><strong>Tutor universitario (OFA):</strong> Recupero degli Obblighi Formativi Aggiuntivi in matematica per le matricole delle facoltà scientifiche.</li>
-        <li><strong>Tutor Laboratorio di Meccanica:</strong> Incarico di docenza per studenti del 1° anno di Fisica.</li>
-        <li><strong>Tutor Ottica e Laboratorio:</strong> Incarico di docenza per studenti del 3° anno di Fisica.</li>
+  <!-- BARRA DI NAVIGAZIONE IN ALTO -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Assia Lezioni</a>
+      <ul class="nav-links">
+        <li><a href="#chi-sono">Chi sono</a></li>
+        <li><a href="#come-insegno">Come insegno</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#contatti">Contatti</a></li>
       </ul>
     </div>
+  </header>
 
-    <!-- MODALITÀ DI INSEGNAMENTO -->
-    <div class="card">
-      <h2>Come Insegno</h2>
-      <p>La lezione inizia con un <strong>ripasso o spiegazione della teoria</strong>, coinvolgendo lo studente con domande mirate per evitare l'ascolto passivo ed evidenziare subito i dubbi. Si passa poi allo <strong>svolgimento guidato degli esercizi</strong>.</p>
-      <p>L'obiettivo è far sentire lo studente del tutto a proprio agio nel chiedere spiegazioni e fare domande senza timore.</p>
+  <div class="main-wrapper">
+    
+    <!-- TITOLO PRINCIPALE -->
+    <div class="hero-title">
+      <h1>Lezioni private di Matematica e Fisica</h1>
+      <div class="hero-subtitle">Roma (Piazza Bologna) e Online in tutto il mondo</div>
     </div>
 
-    <!-- SERVIZI E OFFERTA FORMATIVA -->
-    <div class="card">
-      <h2>Servizi Offerti</h2>
-      
-      <div class="service-box">
-        <h3>1. Ripetizioni Scuola Media e Liceo</h3>
-        <p>Lezioni individuali di Matematica, Fisica, Chimica e Scienze per recupero debiti o miglioramento dei voti.</p>
+    <!-- SEZIONE CHI SONO -->
+    <section id="chi-sono" class="section-block">
+      <h2>Chi sono</h2>
+      <div class="about-container">
+        <img src="foto.jpg" alt="Assia" class="profile-img-large" onerror="this.src='https://via.placeholder.com/180?text=Assia'">
+        <div class="about-text">
+          <p>Sono una ricercatrice laureata magistrale in Fisica all'Università La Sapienza di Roma con 110/110 e Lode, con esperienza di insegnamento a livello liceale e universitario. Ho 4 anni di esperienza come insegnante di lezioni private per studenti del liceo e dell’università. Inoltre, ho svolto tre incarichi di tutoraggio retribuiti presso La Sapienza per i corsi della laurea triennale in Fisica.</p>
+          <a href="mailto:assialezioni@gmail.com" class="btn-email">✉️ Contattami via email</a>
+        </div>
       </div>
+    </section>
 
-      <div class="service-box">
-        <h3>2. Potenziamento per Licei e Medie</h3>
-        <p>Percorsi dedicati agli studenti che vogliono approfondire le materie scientifiche e portarsi avanti con il programma.</p>
-      </div>
+    <!-- SEZIONE COME INSEGNO -->
+    <section id="come-insegno" class="teaching-method">
+      <h2>Come insegno</h2>
+      <p>La lezione inizia con una spiegazione o un ripasso della teoria, durante la quale lo studente è coinvolto con domande mirate per evitare un ascolto passivo ed individuare eventuali lacune. Si passa quindi allo svolgimento degli esercizi, necessari per la comprensione della teoria.</p>
+      <p>Il mio obiettivo è creare un rapporto di fiducia e complicità con gli studenti, in modo che si sentano del tutto a proprio agio a chiedere spiegazioni, a ripetere i concetti appresi e a fare domande.</p>
+    </section>
 
-      <div class="service-box">
-        <h3>3. Studenti Universitari</h3>
-        <p>Preparazione mirata per gli esami di:</p>
-        <ul>
-          <li>Fisica I e Fisica II</li>
-          <li>Elementi di Statistica</li>
-          <li>Istituzioni di Matematica</li>
-        </ul>
-      </div>
+    <!-- SEZIONE PROVVISORIA PER I SERVIZI -->
+    <section id="servizi" class="section-block">
+      <h2>Servizi e Offerta Formativa</h2>
+      <p><em>(In questa sezione andremo a sistemare la lista dei vari servizi: università, licei, anno all'estero, ecc.)</em></p>
+    </section>
 
-      <div class="service-box">
-        <h3>4. Preparazione Test d'Ingresso Universitari</h3>
-        <p>Allenamento teorico e pratico sulle sezioni scientifiche dei test di ammissione per le facoltà ad accesso programmato.</p>
-      </div>
-
-      <div class="service-box">
-        <h3>5. Semestre o Anno all'Estero</h3>
-        <p>Lezioni private online per ragazzi che svolgono un periodo di studio all'estero e vogliono <strong>rimanere in pari con il programma della scuola italiana</strong>.</p>
-        <ul>
-          <li><strong>Pianificazione personalizzata:</strong> Allineata di settimana in settimana con la classe italiana.</li>
-          <li><strong>Supporto continuativo:</strong> Assistenza quotidiana su WhatsApp e correzione degli esercizi extra.</li>
-          <li><strong>Orari flessibili (Fuso Italiano):</strong> Infrasettimanali 20:00 - 23:00 | Fine settimana 14:00 - 20:00 (ideali per chi si trova negli USA, Canada o Australia).</li>
-          <li>Possibilità di lezioni in piccoli gruppi se appartenenti alla stessa classe.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- MODALITÀ E LOGISTICA -->
-    <div class="card">
-      <h2>Modalità delle Lezioni</h2>
-      
-      <h3>📍 In Presenza (Roma)</h3>
-      <p>Presso il mio domicilio in zona <strong>Piazza Bologna</strong>. Disponibile anche al domicilio dello studente nelle zone <strong>Piazza Bologna, Trieste e Portonaccio</strong> (per altre zone è possibile concordare un eventuale rimborso carburante).</p>
-
-      <h3>💻 Online (Tutto il mondo)</h3>
-      <p>In videochiamata (Google Meet o Zoom) utilizzando l'iPad come lavagna digitale condivisa in tempo reale. Al termine di ogni lezione invio gli <strong>appunti scritti in formato PDF</strong>.</p>
-    </div>
-
-    <!-- TARIPFE (OPZIONALE) -->
-    <div class="card">
-      <h2>Tariffe & Pacchetti</h2>
-      <p>Per il servizio dedicato agli studenti all'estero e i percorsi continui:</p>
-      <div class="price-box">
-        <ul>
-          <li><strong>Tariffa oraria singola:</strong> 30 € / ora</li>
-          <li><strong>Pacchetto 5 Ore:</strong> 140 €</li>
-          <li><strong>Pacchetto 10 Ore:</strong> 270 €</li>
-          <li><strong>Colloquio conoscitivo iniziale:</strong> Gratuito</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- RECENSIONI -->
-    <div class="card">
-      <h2>Cosa dicono i miei studenti</h2>
-      
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>"Assia è chiarissima nelle spiegazioni e ha molta pazienza. Mia figlia ha recuperato il debito di Fisica senza ansia."</p>
-        <div class="review-author">— Genitore di una studentessa di Liceo</div>
-      </div>
-
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>"Ottima preparatrice per Fisica I. Riesce a spiegare i concetti teorici più complessi con un approccio pragmatico per risolvere gli esercizi d'esame."</p>
-        <div class="review-author">— Marco, Studente universitario</div>
-      </div>
-
-      <a href="https://www.letuelezioni.it" target="_blank" class="btn btn-outline">
-        ⭐ Leggi tutte le mie recensioni su LeTueLezioni
-      </a>
-    </div>
-
-    <!-- FOOTER & CONTATTO -->
-    <div class="card" style="text-align: center;">
-      <h3>Vuoi fissare un colloquio conoscitivo?</h3>
-      <p>Scrivimi una mail indicando la materia e le tue esigenze.</p>
-      <a href="mailto:assialezioni@gmail.com?subject=Richiesta%20Informazioni%20Lezioni" class="btn btn-email">
-        ✉️ Scrivi a assialezioni@gmail.com
-      </a>
-    </div>
-
-    <div class="footer">
-      © 2026 Assia • Lezioni e Tutorato di Matematica e Fisica a Roma e Online
-    </div>
+    <!-- FOOTER / CONTATTI -->
+    <section id="contatti" class="footer">
+      <p>Email: <a href="mailto:assialezioni@gmail.com" style="color: var(--primary-dark); font-weight: 600;">assialezioni@gmail.com</a></p>
+      <p>© 2026 Assia • Lezioni di Matematica e Fisica</p>
+    </section>
 
   </div>
 
