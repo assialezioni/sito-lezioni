@@ -10,8 +10,10 @@
       --primary-blue: #2563eb;
       --accent-light: #e0f2fe;
       --bg-color: #f8fafc;
+      --card-bg: #ffffff;
       --text-main: #0f172a;
       --text-muted: #334155;
+      --border-color: #e2e8f0;
     }
 
     * {
@@ -29,10 +31,10 @@
       background-color: var(--bg-color);
       color: var(--text-main);
       line-height: 1.7;
-      padding-top: 70px; /* Spazio per il menu fisso in alto */
+      padding-top: 70px;
     }
 
-    /* NAV BAR / MENU A TENDINA-NAVIGAZIONE */
+    /* NAV BAR */
     header {
       position: fixed;
       top: 0;
@@ -63,6 +65,7 @@
       display: flex;
       gap: 15px;
       list-style: none;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -77,14 +80,14 @@
       opacity: 0.8;
     }
 
-    /* CONTENITORE PRINCIPALE CONTINUO */
+    /* CONTENITORE PRINCIPALE */
     .main-wrapper {
       max-width: 850px;
       margin: 0 auto;
       padding: 40px 20px;
     }
 
-    /* HERO / TITOLO INIZIALE */
+    /* HERO / TITOLO */
     .hero-title {
       text-align: center;
       margin-bottom: 40px;
@@ -105,12 +108,12 @@
       font-weight: 500;
     }
 
-    /* SEZIONE CHI SONO (FOTO A FIANCO DEL TESTO) */
+    /* CHI SONO */
     .about-container {
       display: flex;
       flex-direction: column;
       gap: 25px;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
 
     @media (min-width: 640px) {
@@ -121,14 +124,19 @@
     }
 
     .profile-img-large {
-      width: 180px;
-      height: 180px;
+      width: 250px;
+      height: 330px;
       border-radius: 12px;
       object-fit: cover;
-      box-shadow: 0 4px 12px rgba(32, 56, 100, 0.15);
+      object-position: top center;
+      box-shadow: 0 4px 16px rgba(32, 56, 100, 0.15);;
       border: 3px solid var(--primary-dark);
       flex-shrink: 0;
       margin: 0 auto;
+
+      image-rendering: -webkit-optimize-contrast;
+      transform: translateZ(0);
+      backface-visibility: hidden;
     }
 
     @media (min-width: 640px) {
@@ -144,7 +152,16 @@
     h2 {
       font-size: 1.5rem;
       color: var(--primary-dark);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent-light);
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      margin-top: 15px;
+      margin-bottom: 8px;
     }
 
     p {
@@ -153,7 +170,16 @@
       margin-bottom: 16px;
     }
 
-    /* SEZIONE COME INSEGNO */
+    ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* COME INSEGNO */
     .teaching-method {
       background-color: var(--accent-light);
       padding: 24px;
@@ -162,7 +188,17 @@
       margin-bottom: 40px;
     }
 
-    /* PULSANTE CONTATTI */
+    /* CARDS SERVIZI & MODALITÀ */
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    /* PULSANTI */
     .btn-email {
       display: inline-block;
       background-color: var(--primary-dark);
@@ -179,10 +215,42 @@
       background-color: #1e3a6a;
     }
 
-    /* SEZIONI BOZZA (IN ATTESA DI MODIFICA) */
+    .btn-secondary {
+      display: inline-block;
+      border: 2px solid var(--primary-dark);
+      color: var(--primary-dark);
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary-dark);
+      color: white;
+    }
+
+    /* TARIFFE E RECENSIONI */
+    .price-box {
+      background-color: #f1f5f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .review-item {
+      background: #ffffff;
+      border-left: 3px solid #f59e0b;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
     .section-block {
       margin-bottom: 40px;
-      padding-top: 20px;
     }
 
     .footer {
@@ -193,6 +261,201 @@
       padding-top: 20px;
       border-top: 1px solid #cbd5e1;
     }
+
+    /* STILE PER I MENU AD ESPANSIONE (DETAILS/SUMMARY) */
+    details.service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    details.service-card summary {
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      cursor: pointer;
+      list-style: none; /* Rimuove freccia di default */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    /* Freccia personalizzata */
+    details.service-card summary::after {
+      content: "➕";
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+
+    /* Quando il menu è aperto */
+    details.service-card[open] {
+      border-color: var(--primary-dark);
+      box-shadow: 0 4px 12px rgba(32, 56, 100, 0.08);
+    }
+
+    details.service-card[open] summary {
+      background-color: var(--accent-light);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    details.service-card[open] summary::after {
+      content: "➖";
+    }
+
+    .details-content {
+      padding: 20px;
+    }
+
+    /* STILE SPECIFICO PER IL CV */
+    .cv-card {
+      margin-top: 20px;
+      border: 2px solid var(--accent-light) !important;
+    }
+
+    .cv-title {
+      color: var(--primary-dark);
+      font-size: 1.15rem;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 4px;
+    }
+
+    .cv-item {
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 10px;
+      border-left: 3px solid var(--primary-dark);
+    }
+
+    .cv-role {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1.05rem;
+    }
+
+    .cv-institution {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .cv-badge {
+      display: inline-block;
+      background-color: var(--accent-light);
+      color: var(--primary-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .cv-thesis {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+
+    .cv-divider {
+      border: 0;
+      height: 1px;
+      background: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .cv-list {
+      margin-top: 10px;
+      margin-left: 15px;
+    }
+
+    .cv-list li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .cv-subtext {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .cv-link {
+      color: var(--primary-blue);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .cv-link:hover {
+      color: var(--primary-dark);
+    }
+
+    /* STILE MODULO DI CONTATTO */
+    /* STILE MODULO DI CONTATTO - CENTRATO E PROPORZIONATO */
+    .contact-form {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      max-width: 550px; /* Limita la larghezza in orizzontale */
+      margin: 0 auto;   /* Centra la scheda nella pagina */
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .required {
+      color: #e11d48;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background-color: #f8fafc;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-dark);
+      background-color: #ffffff;
+    }
+
+    .email-direct-link {
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+   
   </style>
 </head>
 <body>
@@ -204,7 +467,9 @@
       <ul class="nav-links">
         <li><a href="#chi-sono">Chi sono</a></li>
         <li><a href="#come-insegno">Come insegno</a></li>
-        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#Lezioni">Lezioni</a></li>
+        <li><a href="#modalita">Modalità</a></li>
+        <li><a href="#recensioni">Recensioni</a></li>
         <li><a href="#contatti">Contatti</a></li>
       </ul>
     </div>
@@ -215,7 +480,7 @@
     <!-- TITOLO PRINCIPALE -->
     <div class="hero-title">
       <h1>Lezioni private di Matematica e Fisica</h1>
-      <div class="hero-subtitle">Roma (Piazza Bologna) e Online in tutto il mondo</div>
+      <div class="hero-subtitle">In presenza a Roma e Online</div>
     </div>
 
     <!-- SEZIONE CHI SONO -->
@@ -224,10 +489,80 @@
       <div class="about-container">
         <img src="foto.jpg" alt="Assia" class="profile-img-large" onerror="this.src='https://via.placeholder.com/180?text=Assia'">
         <div class="about-text">
-          <p>Sono una ricercatrice laureata magistrale in Fisica all'Università La Sapienza di Roma con 110/110 e Lode, con esperienza di insegnamento a livello liceale e universitario. Ho 4 anni di esperienza come insegnante di lezioni private per studenti del liceo e dell’università. Inoltre, ho svolto tre incarichi di tutoraggio retribuiti presso La Sapienza per i corsi della laurea triennale in Fisica.</p>
-          <a href="mailto:assialezioni@gmail.com" class="btn-email">✉️ Contattami via email</a>
+          <p>Ciao, sono Assia! </p>
+          <p>Sono una ricercatrice laureata magistrale in Fisica all'Università La Sapienza di Roma con 110/110 e Lode, con esperienza di insegnamento a livello liceale e universitario.</p> 
+          <p> Da 5 anni, svolgo regolarmente lezioni private per studenti del liceo e dell’università. 
+             Inoltre, durante la mia laurea magistrale ho acquisito esperienza di insegnamento universitario avendo svolto tre incarichi di tutoraggio retribuiti presso La Sapienza per i corsi della laurea triennale in Fisica.</p>
+          <a href="#contatti" class="btn-email">✉️ Contattami</a>
         </div>
       </div>
+
+      <!-- TENDINA IL MIO CV -->
+      <details class="service-card cv-card">
+        <summary>📄 Il mio CV</summary>
+        <div class="details-content">
+          
+          <!-- FORMAZIONE -->
+          <h3 class="cv-title">🎓 Formazione</h3>
+          
+          <div class="cv-item">
+            <div class="cv-role">Laurea Magistrale in Fisica </div>
+            <!--<div class="cv-institution">Curriculum Condensed Matter Physics</div>-->
+            <div class="cv-institution">Sapienza Università di Roma</div>
+            <div class="cv-badge">Voto: 110/110 con Lode</div>
+            <!--<p class="cv-thesis"><strong>Tesi:</strong> <em>Unravelling excited-state molecular vibrations by chirped Raman spectroscopy.</em></p>-->
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-role">Laurea Triennale in Fisica</div>
+            <div class="cv-institution">Sapienza Università di Roma</div>
+            <div class="cv-badge">Voto: 110/110 con Lode</div>
+            <!--<p class="cv-thesis"><strong>Tesi:</strong> <em>Paradosso di Klein per elettroni di Dirac nel grafene.</em></p>-->
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-role">Diploma di Maturità Classica</div>
+            <div class="cv-institution">Liceo Classico Statale Giulio Cesare</div>
+            <div class="cv-badge">Voto: 100 e Lode</div>
+          </div>
+
+          <hr class="cv-divider">
+
+          <!-- ESPERIENZE -->
+          <h3 class="cv-title">💼 Esperienze di Insegnamento</h3>
+
+          <div class="cv-item">
+            <div class="cv-role">Tutor Universitario</div>
+            <div class="cv-institution">Sapienza Università di Roma</div>
+            <p style="font-size: 0.9rem; margin-top: 4px;">Incarichi retribuiti di 75 ore ciascuno, assegnati tramite selezione di merito basata sulle votazioni degli esami.</p>
+            
+            <ul class="cv-list">
+              <li>
+                <strong>Tutor per il corso di Ottica e Laboratorio di Ottica</strong><br> Terzo anno della Laurea triennale in Fisica.
+                <!--<span class="cv-subtext">Laurea triennale in Fisica, 3° anno. Supporto agli studenti durante le esperienze di laboratorio previste dal corso.</span>-->
+              </li>
+              <li>
+                <strong>Tutor per il corso di Laboratorio di Meccanica</strong><br> Primo anno della Laurea triennale in Fisica.
+                <!--<span class="cv-subtext">Laurea triennale in Fisica, 1° anno. Supporto nelle attività di laboratorio; preparazione esercizi di probabilità e statistica; ricevimenti settimanali di 2 ore (partecipazione media di 35 studenti) per chiarire dubbi su lezioni ed esperimenti.</span>-->
+              </li>
+              <li>
+                <strong>Tutor per il superamento degli Obblighi Formativi Aggiuntivi (OFA) in Matematica</strong><br> Per studenti del primo anno delle Facoltà di Scienze Matematiche, Fisiche e Naturali.
+                <!--<span class="cv-subtext">Studenti del 1° anno delle Facoltà di Scienze M.F.N. Collaborazione alla creazione di un database online di esercizi svolti di matematica a disposizione degli studenti.</span>-->
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-role">Insegnante di Lezioni Private</div>
+            <p style="font-size: 0.95rem; margin-top: 6px;">
+              Insegno Matematica, Fisica e Chimica per studenti di scuole medie, liceo ed università dal 2021. </p>
+              <p>Leggi cosa dicono di me alcuni miei studenti <a href="#recensioni" class="cv-link">cliccando qui</a>.</p>
+            
+          </div>
+
+        </div>
+      </details>
+
     </section>
 
     <!-- SEZIONE COME INSEGNO -->
@@ -235,19 +570,228 @@
       <h2>Come insegno</h2>
       <p>La lezione inizia con una spiegazione o un ripasso della teoria, durante la quale lo studente è coinvolto con domande mirate per evitare un ascolto passivo ed individuare eventuali lacune. Si passa quindi allo svolgimento degli esercizi, necessari per la comprensione della teoria.</p>
       <p>Il mio obiettivo è creare un rapporto di fiducia e complicità con gli studenti, in modo che si sentano del tutto a proprio agio a chiedere spiegazioni, a ripetere i concetti appresi e a fare domande.</p>
+      <p>Nel mio percorso di studi e nelle mie esperienze lavorative, ho spesso notato che si possa provare ansia e paura quando ci si approccia ad un problema matematico. Solitamente, questo si risolve chiarendo delle lacune fondamentali di concetti "semplici", che vengono spesso dati per scontati.</p>
     </section>
 
-    <!-- SEZIONE PROVVISORIA PER I SERVIZI -->
+    <!-- SEZIONE MATERIE (AD ESPANSIONE) -->
     <section id="servizi" class="section-block">
-      <h2>Servizi e Offerta Formativa</h2>
-      <p><em>(In questa sezione andremo a sistemare la lista dei vari servizi: università, licei, anno all'estero, ecc.)</em></p>
+      <h2>Servizi Offerti</h2>
+
+      <details class="service-card">
+        <summary>Ripetizioni per Liceo e Medie</summary>
+        <div class="details-content">
+          <p>Lezioni private di <strong>Fisica, Matematica, Chimica e Scienze</strong> per scuole superiori e medie, per il recupero dei debiti o per migliorare la media scolastica.</p>
+          
+            <ul>
+              <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio.</li>
+              <li>Possibilità di lezione in piccoli gruppi.</li>
+            </ul>
+         <div class="price-box">
+            <p><strong>Tariffe:</strong></p>
+            <ul>
+              <li>20 €/h</li>
+            </ul>
+          </div> 
+        <!--<div class="price-box">
+            <p><strong>Tariffa e Pacchetti:</strong></p>
+            <ul>
+              <li>Singola ora: 30 €/h</li>
+              <li>Pacchetto 5 ore: 140 €</li>
+              <li>Pacchetto 10 ore: 270 €</li>
+              <li><strong>Colloquio conoscitivo gratuito</strong></li>
+            </ul>
+          </div>-->
+        
+        </div>
+      </details>
+
+      <details class="service-card">
+        <summary>Potenziamento per Liceo e Medie</summary>
+        <div class="details-content">
+          <p>Per studenti che vogliono approfondire Matematica, Fisica e Chimica rispetto al programma scolastico.</p>
+          La lezione inizia con una spiegazione o ripasso della teoria, per poi passare allo svolgimento degli esercizi.
+        
+          <ul>
+            <li> Pianificazione</li>
+            <li>Si scelgono insieme gli argomenti da trattare. Teoria spiegata con un powerpoint.</li> 
+            <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio.</li>
+            <li>Correzione degli <strong>esercizi da me assegnati al di fuori dell’orario della lezione</strong> , in modo da risolvere a lezione i dubbi e gli errori emersi durante lo studio individuale. .</li>
+            <li>Possibilità di lezione in piccoli gruppi.</li>
+          </ul>
+        
+        <div class="price-box">
+            <p><strong>Tariffe:</strong></p>
+            <ul>
+              <li>25 €/h</li>
+            </ul>
+          </div> 
+        </div>
+
+      </details>
+
+      <details class="service-card">
+        <summary>Esami Universitari </summary>
+        <div class="details-content">
+          <p>Preparazione per gli esami delle facoltà scientifiche:</p>
+          <ul>
+            <li>Fisica I</li>
+            <li>Fisica II</li>
+            <li>Istituzioni di Matematica</li>
+            <li>Elementi di Statistica</li>
+          </ul>
+
+          <div class="price-box">
+            <p><strong>Tariffe:</strong></p>
+            <ul>
+              <li>25 €/h</li>
+            </ul>
+          </div> 
+
+        </div>
+      </details>
+
+      <details class="service-card">
+        <summary>Preparazione ai Test di Ingresso</summary>
+        <div class="details-content">
+          <p>Preparazione teorica al <strong>TOLC </strong>per le sezioni:</p>
+            <ul>
+              <li>Matematica </li>
+              <li>Fisica</li>
+              <li>Chimica</li>
+              <li>Logica</li>
+              <li>Comprensione verbale</li>
+            </ul>
+
+          <div class="price-box">
+            <p><strong>Tariffe:</strong></p>
+            <ul>
+              <li>25 €/h</li>
+            </ul>
+          </div> 
+
+        </div>
+      </details>
+
+      <details class="service-card">
+        <summary>Periodo all'Estero</summary>
+        <div class="details-content">
+          <p>Lezioni online di Matematica, Fisica e Chimica per studenti del Liceo che svolgono un periodo all'estero e desiderano <strong>rimanere in pari con il programma della scuola italiana</strong>.</p>
+          <ul>
+            <li><strong>Pianificazione personalizzata delle lezioni </strong> per seguire di settimana in settimana il programma svolto nella scuola italiana.</li>
+            <li><strong>Orari dedicati (Fuso orario italiano):</strong> giorni infrasettimanali 20:00 - 23:00 | fine settimana 14:00 - 20:00 Questi orari corrispondono alla fascia diurna nei principali paesi extra-europei (USA, Canada, Australia).</li>
+            <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio.</li>
+            <li> Correzione degli esercizi da me assegnati al di fuori dell’orario della lezione, in modo da risolvere a lezione i dubbi e gli errori emersi durante lo studio individuale. </li>
+            <li>Possibilità di lezione in piccoli gruppi, per studenti appartenenti alla stessa classe.</li>
+          </ul>
+
+          <div class="price-box">
+            <p><strong>Tariffa:</strong></p>
+            <ul>
+              <li>Singola ora: 30 €/h</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+       
+    
+    <!-- MODALITÀ DELLE LEZIONI -->
+    <section id="modalita" class="section-block">
+      <h2>Modalità delle Lezioni</h2>
+      
+      <div class="service-card">
+        <h3>📍 In Presenza (Roma)</h3>
+        <p>Le lezioni si svolgono in presenza presso il mio domicilio in <strong>zona Piazza Bologna</strong>,
+          oppure presso il <strong>domicilio dello studente</strong>.</p> 
+          <p>A seconda della zona, potrei richiedere un rimborso spese carburante.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>💻 Online</h3>
+        <p>Lezioni in videochiamata (Google Meet, Zoom o altra piattaforma a scelta) con utilizzo di iPad e penna digitale.</p>
+        <p>Durante la spiegazione condivido lo schermo del tablet,dal quale lo studente/la studentessa vedere cosa scrivo in tempo reale. Gli appunti prodotti durante la lezione sono mandati agli studenti in formato PDF.
+          Durante lo svolgimento degli esercizi, lo studente è incoraggiato a condividere cosa sta scrivendo; se non possiede un tablet, può inquadrare con la telecamera dello smartphone il foglio su cui sta scrivendo.
+        </p>
+      </div>
     </section>
 
-    <!-- FOOTER / CONTATTI -->
-    <section id="contatti" class="footer">
-      <p>Email: <a href="mailto:assialezioni@gmail.com" style="color: var(--primary-dark); font-weight: 600;">assialezioni@gmail.com</a></p>
-      <p>© 2026 Assia • Lezioni di Matematica e Fisica</p>
+    <!-- RECENSIONI -->
+    <section id="recensioni" class="section-block">
+      <h2>Cosa dicono i miei studenti</h2>
+
+      <div class="review-item">
+        <p style="font-style: italic; margin-bottom: 5px;">"Assia mi ha seguito nel mio percorso di studi di Matematica da Gennaio a Giugno (3 anno di liceo classico), e con le sue chiarissime spiegazioni sono riuscita ad ottenere valutazioni mai ottenuti prima. La descriverei come una ragazza molto disponibile, gentilissima ma soprattutto comprensibile. Ha reso tutto ciò che per me risultava complicato una passeggiata, ha avuto molta pazienza e soprattutto voleva che io capissi veramente l’argomento e non che lo tralasciassi in modo superficiale. Mi ha sempre seguita, anche in orari improponibili, perché teneva ai miei traguardi scolastici forse più di me. Veramente una ragazza speciale!"</p>
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Elisa Maria, studentessa di Liceo Classico</p>
+      </div>
+
+      <div class="review-item">
+        <p style="font-style: italic; margin-bottom: 5px;">"Assia è molto preparata, sa spiegare con semplicità e pazienza, promuove costantemente lo sviluppo autonomo del ragionamento dello studente."</p>
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Simona, Mamma di studentessa di Liceo Classico in poteniamento</p>
+      </div>
+
+      <div class = "review-item">
+        <p style="font-style: italic; margin-bottom: 5px;">"Assia è una ragazza molto paziente, disponibile e competente. Mia figlia fa ripetizioni con lei di matematica e geometria (1 media) e si trova molto bene . Trovo Assia una ragazza molto brava nell' insegnamento , anche lavorando online è super attrezzata per far si che la lezione sia efficace al 100%."</p>
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Carolina, Mamma di studentessa di scuola media.</p>
+      </div>
+     
+  
+
+      <a href="https://www.letuelezioni.it/insegnanti/assia-2799283.htm" target="_blank" class="btn-secondary">
+        ⭐ Leggi le altre recensioni sul mio profilo LeTueLezioni
+      </a>
+ 
     </section>
+
+    <!-- SEZIONE CONTATTI  -->
+    <section id="contatti" class="section-block">
+      <h2>Contatti</h2>
+      
+      <p style="margin-bottom: 20px;">
+        Puoi scrivermi all'indirizzo <a href="mailto:assialezioni@gmail.com" class="email-direct-link">assialezioni@gmail.com</a> oppure compilare il modulo qui sotto per essere ricontattato:
+      </p>
+
+      <!-- FORM DI CONTATTO-->
+      <form action="https://formspree.io/f/xjygblbd" method="POST" class="contact-form">
+        
+        <!-- Recapito (Obbligatorio) -->
+        <div class="form-group">
+          <label for="recapito">Un tuo recapito (Email o Telefono) <span class="required">*</span></label>
+          <input type="text" id="recapito" name="recapito" placeholder="Es. mario.rossi@email.com oppure 333 1234567" required>
+        </div>
+
+        <!-- Menu a Tendina Servizio (Facoltativo) -->
+        <div class="form-group">
+          <label for="servizio">Servizio di interesse (opzionale)</label>
+          <select id="servizio" name="servizio">
+            <option value="Non specificato">-- Seleziona un servizio --</option>
+            <option value="Ripetizioni Liceo e Medie">Ripetizioni Liceo e Medie</option>
+            <option value="Potenziamento Liceo e Medie"> Potenziamento Liceo e Medie</option>
+            <option value="Esami Universitari"> Esami Universitari</option>
+            <option value="Preparazione Test di Ingresso">Preparazione Test di Ingresso</option>
+            <option value="Lezioni durante periodo all'estero">Lezioni durante periodo all'estero</option>
+            <option value="Altro"> Altro / Informazioni Generali</option>
+          </select>
+        </div>
+
+        <!-- Messaggio (Facoltativo) -->
+        <div class="form-group">
+          <label for="messaggio">Il tuo messaggio (opzionale)</label>
+          <textarea id="messaggio" name="messaggio" rows="4" placeholder="Es. Classe frequentata, argomenti principali da recuperare, disponibilità oraria..."></textarea>
+        </div>
+
+        <!-- Tasto Invio -->
+        <button type="submit" class="btn-email" style="width: 100%; border: none; cursor: pointer; font-size: 1rem;">
+          📩 Invia richiesta di contatto
+        </button>
+
+      </form>
+    </section>
+
+    <!-- FOOTER PICCOLO IN FONDO -->
+    <div class="footer">
+      © 2026 Assia • Lezioni di Matematica e Fisica
+    </div>
+
 
   </div>
 
