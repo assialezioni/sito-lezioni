@@ -67,10 +67,6 @@
       line-height: 1;
     }
 
-    /* Pulsante Contattami nel banner mobile */
-
-    /* Pulsante Contattami nel banner mobile */
-   /* Pulsante Contattami nel banner mobile (ingrandito e in risalto) */
 
    /* Pulsante Contattami nel banner mobile */
     .nav-btn-mobile {
@@ -141,8 +137,12 @@
 
     /* Su Desktop/Schermi grandi ripristina la visualizzazione classica */
     @media (min-width: 641px) {
-      .menu-toggle, .nav-btn-mobile {
+      .menu-toggle {
         display: none; /* Nasconde le 3 lineette e il bottone mobile su PC */
+      }
+
+      .nav-container {
+      justify-content: space-between; /* Mantiene il menu e il pulsante separati ai due lati */
       }
 
       .nav-links {
@@ -161,6 +161,12 @@
         padding: 0;
         border-bottom: none;
       }
+
+     /* Spinge il pulsante a destra su Desktop */
+      .nav-btn-mobile {
+        margin-left: auto;
+      } 
+
     }
 
    /* header {
@@ -616,8 +622,13 @@
       color: var(--primary-dark);
     }
 
+    /*STILE ELENCO PUNTATO ESAMI E SEZIONI TOLC*/
+    
+    .exam-list {
+       list-style-type: circle;
+      } 
+    
     /* STILE MODULO DI CONTATTO */
-    /* STILE MODULO DI CONTATTO - CENTRATO E PROPORZIONATO */
     .contact-form {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -686,8 +697,6 @@
         ☰
       </button>
 
-      <!-- Pulsante rapido Contattami a destra -->
-      <a href="#contatti" class="nav-btn-mobile">Contattami</a>
 
       <ul class="nav-links" id="nav-links">
         <li><a href="#chi-sono">Chi sono</a></li>
@@ -697,6 +706,9 @@
         <li><a href="#recensioni">Recensioni</a></li>
         <li><a href="#contatti">Contatti</a></li>
       </ul>
+
+     <!-- Pulsante rapido Contattami a destra -->
+      <a href="#contatti" class="nav-btn-mobile">Contattami</a>
     </div>
   </header>
 
@@ -715,10 +727,10 @@
         <img src="foto.jpg" alt="Assia" class="profile-img-large" onerror="this.src='https://via.placeholder.com/180?text=Assia'">
         <div class="about-text">
           <p>Ciao, sono Assia! </p>
-          <p>Sono una ricercatrice laureata magistrale in Fisica all'Università La Sapienza di Roma con 110/110 e Lode, con esperienza di insegnamento a livello liceale e universitario.</p> 
-          <p> Da 5 anni, svolgo regolarmente lezioni private per studenti di scuole medie, liceo ed università. 
-             Inoltre, durante la mia laurea magistrale ho acquisito esperienza di insegnamento universitario avendo svolto tre incarichi di tutoraggio retribuiti presso La Sapienza per i corsi della Laurea triennale in Fisica.</p>
-          <a href="#contatti" class="btn-email">✉️ Contattami</a>
+          <p>Sono una ricercatrice laureata magistrale in Fisica <strong>con 110/110 e Lode</strong> all'Università La Sapienza, con <strong> 5 anni di esperienza </strong> di insegnamento a livello liceale e universitario.</p> 
+          <p> Dal 2021, svolgo regolarmente lezioni private per studenti di scuole medie, liceo ed università. 
+             Inoltre, durante la mia laurea magistrale ho acquisito esperienza di insegnamento universitario, avendo svolto tre incarichi di tutoraggio retribuiti presso La Sapienza per i corsi della Laurea triennale in Fisica.</p>
+          <!--<a href="#contatti" class="btn-email">✉️ Contattami</a>-->
         </div>
       </div>
 
@@ -826,7 +838,7 @@
       </details>
 
       <details class="service-card">
-        <summary>Periodo all'Estero</summary>
+        <summary>Lezioni online durante il periodo all'Estero</summary>
         <div class="details-content">
           <p>Lezioni online di Matematica, Fisica e Chimica per studenti del Liceo che svolgono un periodo all'estero e desiderano <strong>rimanere in pari con il programma della scuola italiana</strong>.</p>
           <ul>
@@ -856,9 +868,9 @@
           <p>Per studenti che vogliono <strong>approfondire Matematica, Fisica e Chimica rispetto al programma scolastico</strong>.</p>
         
           <ul>
-            <li> Pianificazione di un programma personalizzato.</li>
+            <li> Pianificazione di un <strong>programma personalizzato</strong>.</li>
             <li>Correzione degli esercizi da me assegnati al di fuori dell’orario della lezione, in modo da risolvere a lezione i dubbi e gli errori emersi durante lo studio individuale. </li>
-            <li>Supporto al bisogno via WhatsApp per chiarimenti e dubbi durante lo studio individuale.</li>
+            <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio individuale.</li>
             <li>Possibilità di lezione in piccoli gruppi.</li>
           </ul>
         
@@ -878,14 +890,19 @@
       <details class="service-card">
         <summary>Preparazione ai Test di Ingresso</summary>
         <div class="details-content">
-          <p>Preparazione al <strong>TOLC</strong>per le sezioni:</p>
-            <ul>
+          <p>Preparazione al <strong>TOLC</strong> per le sezioni:</p>
+            <ul class="exam-list">
               <li>Matematica </li>
               <li>Fisica</li>
               <li>Chimica</li>
               <li>Logica</li>
               <li>Comprensione verbale</li>
             </ul>
+
+          <ul>
+            <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio individuale.</li>
+            <li>Possibilità di lezione in piccoli gruppi.</li>
+          </ul>
 
            <div class="price-box">
             <p><strong>Tariffe e Pacchetti:</strong></p>
@@ -902,32 +919,38 @@
 
           
       <details class="service-card">
-        <summary>Esami Universitari </summary>
-        <div class="details-content">
-          <p>Preparazione per gli esami delle facoltà scientifiche:</p>
-          <ul>
-            <li>Fisica I</li>
-            <li>Fisica II</li>
-            <li>Istituzioni di Matematica</li>
-            <li>Elementi di Statistica</li>
-          </ul>
+  <summary>Esami Universitari </summary>
+  
+  <div class="details-content">
+    
+    <p>Preparazione per gli esami delle facoltà scientifiche:</p>
+    
+    <ul class="exam-list">
+      <li>Fisica I</li>
+      <li>Fisica II</li>
+      <li>Istituzioni di Matematica</li>
+      <li>Elementi di Statistica</li>
+    </ul>
 
-           <div class="price-box">
-            <p><strong>Tariffe e Pacchetti:</strong></p>
-            <ul>
-              <li>Singola ora: 25€/h</li>
-              <li>Pacchetto 5 ore: 120€</li>
-              <li>Pacchetto 10 ore: 240€</li>
-              <li><strong>Prima lezione gratuita</strong></li>
-            </ul>
-          </div>
 
-        </div>
-      </details>
+    <ul>
+      <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio individuale.</li>
+      <li>Possibilità di lezione in piccoli gruppi.</li>
+    </ul>
 
-      <!--</details>-->
-    </section>
-       
+    <!-- Box Tariffe e Pacchetti -->
+    <div class="price-box">
+      <p><strong>Tariffe e Pacchetti:</strong></p>
+      <ul>
+        <li>Singola ora: 25€/h</li>
+        <li>Pacchetto 5 ore: 120€</li>
+        <li>Pacchetto 10 ore: 240€</li>
+        <li><strong>Prima lezione gratuita</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</details> 
     
     <!-- MODALITÀ DELLE LEZIONI -->
     <section id="modalita" class="section-block">
