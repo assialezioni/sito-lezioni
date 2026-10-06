@@ -68,7 +68,35 @@
     }
 
     /* Pulsante Contattami nel banner mobile */
+
+    /* Pulsante Contattami nel banner mobile */
+   /* Pulsante Contattami nel banner mobile (ingrandito e in risalto) */
+
+   /* Pulsante Contattami nel banner mobile */
     .nav-btn-mobile {
+      background-color: #ffffff;
+      color: var(--primary-dark);
+      padding: 6px 14px;                      /* Dimensioni del bottone più contenute */
+      border-radius: 20px;
+      text-decoration: none;
+      
+      /* FONT E TESTO */
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-weight: 700;                       /* Grassetto evidente */
+      font-size: 0.95rem;                     /* Dimensione del testo bilanciata */
+      text-transform: none;                  /* Mantiene "Contattami" (C maiuscola, resto minuscolo) */
+      
+      /* BORDINO E OMBRA */
+      border: 2px solid #5b9bd5;             /* Bordino azzurro chiaro */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn-mobile:active {
+      background-color: #e6f0fa;
+      transform: scale(0.97);
+    }
+    /*.nav-btn-mobile {
       background-color: #ffffff;
       color: var(--primary-dark);
       padding: 6px 14px;
@@ -77,7 +105,7 @@
       font-weight: 600;
       font-size: 0.85rem;
       transition: background-color 0.2s, color 0.2s;
-    }
+    }*/
 
     .nav-btn-mobile:hover {
       background-color: var(--accent-gold, #f0f0f0);
@@ -650,7 +678,7 @@
 <body>
 
   <!-- BARRA DI NAVIGAZIONE -->
- <!-- BARRA DI NAVIGAZIONE -->
+
   <header>
     <div class="nav-container">
       <!-- Menu 3 lineette a sinistra -->
@@ -664,7 +692,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#chi-sono">Chi sono</a></li>
         <li><a href="#come-insegno">Come insegno</a></li>
-        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#servizi">Cosa insegno</a></li>
         <li><a href="#modalita">Modalità</a></li>
         <li><a href="#recensioni">Recensioni</a></li>
         <li><a href="#contatti">Contatti</a></li>
@@ -688,8 +716,8 @@
         <div class="about-text">
           <p>Ciao, sono Assia! </p>
           <p>Sono una ricercatrice laureata magistrale in Fisica all'Università La Sapienza di Roma con 110/110 e Lode, con esperienza di insegnamento a livello liceale e universitario.</p> 
-          <p> Da 5 anni, svolgo regolarmente lezioni private per studenti del liceo e dell’università. 
-             Inoltre, durante la mia laurea magistrale ho acquisito esperienza di insegnamento universitario avendo svolto tre incarichi di tutoraggio retribuiti presso La Sapienza per i corsi della laurea triennale in Fisica.</p>
+          <p> Da 5 anni, svolgo regolarmente lezioni private per studenti di scuole medie, liceo ed università. 
+             Inoltre, durante la mia laurea magistrale ho acquisito esperienza di insegnamento universitario avendo svolto tre incarichi di tutoraggio retribuiti presso La Sapienza per i corsi della Laurea triennale in Fisica.</p>
           <a href="#contatti" class="btn-email">✉️ Contattami</a>
         </div>
       </div>
@@ -720,7 +748,7 @@
           <div class="cv-item">
             <div class="cv-role">Diploma di Maturità Classica</div>
             <div class="cv-institution">Liceo Classico Statale Giulio Cesare</div>
-            <div class="cv-badge">Voto: 100 e Lode</div>
+            <div class="cv-badge">Voto: 100 con Lode</div>
           </div>
 
           <hr class="cv-divider">
@@ -772,60 +800,107 @@
 
     <!-- SEZIONE MATERIE (AD ESPANSIONE) -->
     <section id="servizi" class="section-block">
-      <h2>Servizi Offerti</h2>
+      <h2>Cosa insegno</h2>
 
       <details class="service-card">
         <summary>Ripetizioni per Liceo e Medie</summary>
         <div class="details-content">
-          <p>Lezioni private di <strong>Fisica, Matematica, Chimica e Scienze</strong> per scuole superiori e medie, per il recupero dei debiti o per migliorare la media scolastica.</p>
+          <p>Lezioni private di <strong>Fisica, Matematica e Chimica</strong> per scuole medie e superiori, per il recupero dei debiti o per migliorare la media scolastica.</p>
           
             <ul>
-              <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio.</li>
+              <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio individuale.</li>
               <li>Possibilità di lezione in piccoli gruppi.</li>
             </ul>
-         <div class="price-box">
-            <p><strong>Tariffe:</strong></p>
+       
+        <div class="price-box">
+            <p><strong>Tariffe e Pacchetti:</strong></p>
             <ul>
-              <li>20 €/h</li>
+              <li>Singola ora: 20€/h</li>
+              <li>Pacchetto 5 ore:95€</li>
+              <li>Pacchetto 10 ore: 190€</li>
+              <li><strong>Prima lezione gratuita</strong></li>
             </ul>
-          </div> 
-        <!--<div class="price-box">
-            <p><strong>Tariffa e Pacchetti:</strong></p>
-            <ul>
-              <li>Singola ora: 30 €/h</li>
-              <li>Pacchetto 5 ore: 140 €</li>
-              <li>Pacchetto 10 ore: 270 €</li>
-              <li><strong>Colloquio conoscitivo gratuito</strong></li>
-            </ul>
-          </div>-->
+          </div>
         
         </div>
       </details>
 
       <details class="service-card">
+        <summary>Periodo all'Estero</summary>
+        <div class="details-content">
+          <p>Lezioni online di Matematica, Fisica e Chimica per studenti del Liceo che svolgono un periodo all'estero e desiderano <strong>rimanere in pari con il programma della scuola italiana</strong>.</p>
+          <ul>
+            <li><strong>Pianificazione personalizzata delle lezioni </strong> per seguire di settimana in settimana il programma svolto nella scuola italiana.</li>
+            <li><strong> Orari dedicati (Fuso orario italiano):</strong> giorni infrasettimanali 20:00 - 23:00, fine settimana 14:00 - 20:00.
+              Questi orari corrispondono alla fascia diurna nei principali paesi extra-europei (USA, Canada, Australia).</li>
+            <li> Correzione degli esercizi da me assegnati al di fuori dell’orario della lezione, in modo da risolvere a lezione i dubbi e gli errori emersi durante lo studio individuale. </li>
+            <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio individuale.</li>
+            <li>Possibilità di lezione in piccoli gruppi, per studenti appartenenti alla stessa classe.</li>
+          </ul>
+          <div class="price-box">
+            <p><strong>Tariffe e Pacchetti:</strong></p>
+            <ul>
+              <li>Singola ora: 30€/h</li>
+              <li>Pacchetto 5 ore: 145€</li>
+              <li>Pacchetto 10 ore: 290€</li>
+              <li><strong>Prima lezione gratuita</strong></li>
+            </ul>
+          </div>
+
+          </div>
+        </details>
+
+      <details class="service-card">
         <summary>Potenziamento per Liceo e Medie</summary>
         <div class="details-content">
-          <p>Per studenti che vogliono approfondire Matematica, Fisica e Chimica rispetto al programma scolastico.</p>
-          La lezione inizia con una spiegazione o ripasso della teoria, per poi passare allo svolgimento degli esercizi.
+          <p>Per studenti che vogliono <strong>approfondire Matematica, Fisica e Chimica rispetto al programma scolastico</strong>.</p>
         
           <ul>
-            <li> Pianificazione</li>
-            <li>Si scelgono insieme gli argomenti da trattare. Teoria spiegata con un powerpoint.</li> 
-            <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio.</li>
-            <li>Correzione degli <strong>esercizi da me assegnati al di fuori dell’orario della lezione</strong> , in modo da risolvere a lezione i dubbi e gli errori emersi durante lo studio individuale. .</li>
+            <li> Pianificazione di un programma personalizzato.</li>
+            <li>Correzione degli esercizi da me assegnati al di fuori dell’orario della lezione, in modo da risolvere a lezione i dubbi e gli errori emersi durante lo studio individuale. </li>
+            <li>Supporto al bisogno via WhatsApp per chiarimenti e dubbi durante lo studio individuale.</li>
             <li>Possibilità di lezione in piccoli gruppi.</li>
           </ul>
         
-        <div class="price-box">
-            <p><strong>Tariffe:</strong></p>
+         <div class="price-box">
+            <p><strong>Tariffe e Pacchetti:</strong></p>
             <ul>
-              <li>25 €/h</li>
+              <li>Singola ora: 25€/h</li>
+              <li>Pacchetto 5 ore: 120€</li>
+              <li>Pacchetto 10 ore: 240€</li>
+              <li><strong>Prima lezione gratuita</strong></li>
             </ul>
-          </div> 
-        </div>
-
+          </div>
       </details>
 
+      
+
+      <details class="service-card">
+        <summary>Preparazione ai Test di Ingresso</summary>
+        <div class="details-content">
+          <p>Preparazione al <strong>TOLC</strong>per le sezioni:</p>
+            <ul>
+              <li>Matematica </li>
+              <li>Fisica</li>
+              <li>Chimica</li>
+              <li>Logica</li>
+              <li>Comprensione verbale</li>
+            </ul>
+
+           <div class="price-box">
+            <p><strong>Tariffe e Pacchetti:</strong></p>
+            <ul>
+              <li>Singola ora: 25€/h</li>
+              <li>Pacchetto 5 ore: 120€</li>
+              <li>Pacchetto 10 ore: 240€</li>
+              <li><strong>Prima lezione gratuita</strong></li>
+            </ul>
+          </div>
+
+        </div>
+      </details>
+
+          
       <details class="service-card">
         <summary>Esami Universitari </summary>
         <div class="details-content">
@@ -837,58 +912,20 @@
             <li>Elementi di Statistica</li>
           </ul>
 
-          <div class="price-box">
-            <p><strong>Tariffe:</strong></p>
+           <div class="price-box">
+            <p><strong>Tariffe e Pacchetti:</strong></p>
             <ul>
-              <li>25 €/h</li>
-            </ul>
-          </div> 
-
-        </div>
-      </details>
-
-      <details class="service-card">
-        <summary>Preparazione ai Test di Ingresso</summary>
-        <div class="details-content">
-          <p>Preparazione teorica al <strong>TOLC </strong>per le sezioni:</p>
-            <ul>
-              <li>Matematica </li>
-              <li>Fisica</li>
-              <li>Chimica</li>
-              <li>Logica</li>
-              <li>Comprensione verbale</li>
-            </ul>
-
-          <div class="price-box">
-            <p><strong>Tariffe:</strong></p>
-            <ul>
-              <li>25 €/h</li>
-            </ul>
-          </div> 
-
-        </div>
-      </details>
-
-      <details class="service-card">
-        <summary>Periodo all'Estero</summary>
-        <div class="details-content">
-          <p>Lezioni online di Matematica, Fisica e Chimica per studenti del Liceo che svolgono un periodo all'estero e desiderano <strong>rimanere in pari con il programma della scuola italiana</strong>.</p>
-          <ul>
-            <li><strong>Pianificazione personalizzata delle lezioni </strong> per seguire di settimana in settimana il programma svolto nella scuola italiana.</li>
-            <li><strong>Orari dedicati (Fuso orario italiano):</strong> giorni infrasettimanali 20:00 - 23:00 | fine settimana 14:00 - 20:00 Questi orari corrispondono alla fascia diurna nei principali paesi extra-europei (USA, Canada, Australia).</li>
-            <li><strong>Supporto al bisogno via WhatsApp</strong> per chiarimenti e dubbi durante lo studio.</li>
-            <li> Correzione degli esercizi da me assegnati al di fuori dell’orario della lezione, in modo da risolvere a lezione i dubbi e gli errori emersi durante lo studio individuale. </li>
-            <li>Possibilità di lezione in piccoli gruppi, per studenti appartenenti alla stessa classe.</li>
-          </ul>
-
-          <div class="price-box">
-            <p><strong>Tariffa:</strong></p>
-            <ul>
-              <li>Singola ora: 30 €/h</li>
+              <li>Singola ora: 25€/h</li>
+              <li>Pacchetto 5 ore: 120€</li>
+              <li>Pacchetto 10 ore: 240€</li>
+              <li><strong>Prima lezione gratuita</strong></li>
             </ul>
           </div>
+
         </div>
       </details>
+
+      <!--</details>-->
     </section>
        
     
@@ -906,8 +943,8 @@
       <div class="service-card">
         <h3>💻 Online</h3>
         <p>Lezioni in videochiamata (Google Meet, Zoom o altra piattaforma a scelta) con utilizzo di iPad e penna digitale.</p>
-        <p>Durante la spiegazione condivido lo schermo del tablet,dal quale lo studente/la studentessa vedere cosa scrivo in tempo reale. Gli appunti prodotti durante la lezione sono mandati agli studenti in formato PDF.
-          Durante lo svolgimento degli esercizi, lo studente è incoraggiato a condividere cosa sta scrivendo; se non possiede un tablet, può inquadrare con la telecamera dello smartphone il foglio su cui sta scrivendo.
+        <p>Durante la spiegazione condivido lo schermo del tablet, dal quale lo studente vede cosa scrivo in tempo reale. Gli appunti prodotti durante la lezione sono mandati agli studenti in formato PDF.
+          Durante lo svolgimento degli esercizi, lo studente è incoraggiato a condividere cosa sta scrivendo (se non possiede un tablet, può inquadrare con la telecamera dello smartphone il foglio).
         </p>
       </div>
     </section>
@@ -918,17 +955,17 @@
 
       <div class="review-item">
         <p style="font-style: italic; margin-bottom: 5px;">"Assia mi ha seguito nel mio percorso di studi di Matematica da Gennaio a Giugno (3 anno di liceo classico), e con le sue chiarissime spiegazioni sono riuscita ad ottenere valutazioni mai ottenuti prima. La descriverei come una ragazza molto disponibile, gentilissima ma soprattutto comprensibile. Ha reso tutto ciò che per me risultava complicato una passeggiata, ha avuto molta pazienza e soprattutto voleva che io capissi veramente l’argomento e non che lo tralasciassi in modo superficiale. Mi ha sempre seguita, anche in orari improponibili, perché teneva ai miei traguardi scolastici forse più di me. Veramente una ragazza speciale!"</p>
-        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Elisa Maria, studentessa di Liceo Classico</p>
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Elisa Maria, studentessa di Liceo Classico, Ripetizioni</p>
       </div>
 
       <div class="review-item">
         <p style="font-style: italic; margin-bottom: 5px;">"Assia è molto preparata, sa spiegare con semplicità e pazienza, promuove costantemente lo sviluppo autonomo del ragionamento dello studente."</p>
-        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Simona, Mamma di studentessa di Liceo Classico in poteniamento</p>
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Simona, Mamma di studentessa di Liceo Classico, Potenziamento</p>
       </div>
 
       <div class = "review-item">
         <p style="font-style: italic; margin-bottom: 5px;">"Assia è una ragazza molto paziente, disponibile e competente. Mia figlia fa ripetizioni con lei di matematica e geometria (1 media) e si trova molto bene . Trovo Assia una ragazza molto brava nell' insegnamento , anche lavorando online è super attrezzata per far si che la lezione sia efficace al 100%."</p>
-        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Carolina, Mamma di studentessa di scuola media.</p>
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">— Carolina, Mamma di studentessa di scuole medie, Ripetizioni.</p>
       </div>
      
   
@@ -958,9 +995,9 @@
 
         <!-- Menu a Tendina Servizio (Facoltativo) -->
         <div class="form-group">
-          <label for="servizio">Servizio di interesse (opzionale)</label>
+          <label for="servizio">A cosa sei interessato? (opzionale)</label>
           <select id="servizio" name="servizio">
-            <option value="Non specificato">-- Seleziona un servizio --</option>
+            <option value="Non specificato">-- Seleziona --</option>
             <option value="Ripetizioni Liceo e Medie">Ripetizioni Liceo e Medie</option>
             <option value="Potenziamento Liceo e Medie"> Potenziamento Liceo e Medie</option>
             <option value="Esami Universitari"> Esami Universitari</option>
@@ -973,7 +1010,7 @@
         <!-- Messaggio (Facoltativo) -->
         <div class="form-group">
           <label for="messaggio">Il tuo messaggio (opzionale)</label>
-          <textarea id="messaggio" name="messaggio" rows="4" placeholder="Es. Classe frequentata, argomenti principali da recuperare, disponibilità oraria..."></textarea>
+          <textarea id="messaggio" name="messaggio" rows="4" placeholder="Es. Che tipo di aiuto ti occorre, a quali orari posso contattarti..."></textarea>
         </div>
 
         <!-- Tasto Invio -->
